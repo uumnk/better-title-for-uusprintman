@@ -11,8 +11,8 @@
 (function() {
     'use strict';
 
-    const CHANGE_TITLE_ORDER = true;
-    let PAGE_TITLE_REGEX = /(^.+)-(.{4})-(.+)/;
+    const CHANGE_TITLE_ORDER = true; // Better ordering of the title - put the ticket number and name to the start of the title.
+    const PAGE_TITLE_REGEX = /(^.+)-(.{4})-(.+)/;
 
     // Page content is loaded dynamically so we need to wait and try it in intervals (body.onload is triggered before the content is loaded so it won't help).
     const interval = 1000;
