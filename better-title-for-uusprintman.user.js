@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better title for uuSprintman
 // @namespace    https://github.com/uumnk/better-title-for-uusprintman
-// @version      0.1
+// @version      0.2
 // @description  Adds page name to uuSprintman's document title to make it better and make saving to bookmarks easier.
 // @author       Monika
 // @match        https://uuapp.plus4u.net/uu-sprintman-maing01/*/ticket?id=*
@@ -12,14 +12,14 @@
     'use strict';
 
     const CHANGE_TITLE_ORDER = true; // Better ordering of the title - put the ticket number and name to the start of the title.
-    const PAGE_TITLE_REGEX = /(^.+)-(.{4})-(.+)/;
+    const PAGE_TITLE_REGEX = /(^.+?)-(T\d{3})-(.+)/;
 
     // Page content is loaded dynamically so we need to wait and try it in intervals (body.onload is triggered before the content is loaded so it won't help).
     const interval = 1000;
     // There is limited count of attempts because structure of the page could change so this script would be looking for it forever.
     let attempts = 10;
-    // Query was made to ensure that the page title is foud and nothing else. If the script stops working, maybe structure of the page has changed and it will be necessary to change this query.
-    let titleQuery = ".uu5-bricks-page-content-body>.uusprintman-routes-ticket>.uu5-common-div>.uusprintman-core-ticket-detail>.uu5-common-div>.uusprintman-core-ticket-detail-section>h1.uu5-bricks-header>.uu5-common-div>.uu5-bricks-section>h2.uu5-bricks-header>.uu5-common-div>.uu5-common-div>.uup-bricks-infoicon-header>.uu5-bricks-text"
+    // Query was made to ensure that the page title is found and nothing else. If the script stops working, maybe structure of the page has changed and it will be necessary to change this query.
+    let titleQuery = "h1.uu5-bricks-header .uu5-bricks-text"
 
     let timer = setInterval(() => {
         let documentTitle = document.title;
