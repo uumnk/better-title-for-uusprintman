@@ -8,7 +8,7 @@ Adds page name to uuSprintman's document title to make it better and make saving
 **Quick guide:**
 1. (Re)load some uuSprintman page with Ticket.
 2. Title should be set automatically after full load of the page.
-3. Optional: If you want the title in a different format, try to change value of boolean constant CHANGE_TITLE_ORDER in the script.
+3. Optional: You can customize the new title by changing settings on the beginning of the script.
 
 **Known issues: note that in the current version:**
 1. The document title is altered only in tickets (tasks).
